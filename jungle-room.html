@@ -30,14 +30,14 @@
     <div class="pixel-noise"></div>
 
     <div class="vhs-particles">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
     <a href="../index.html" class="back-button">← BACK TO ARCADE</a>
 
@@ -53,45 +53,53 @@
     </div>
 
     <div class="jungle-zone crt-zone" data-message="CRT: NOW PLAYING... DEEP IN THE JUNGLE">
-      <img id="crtMixImage" class="crt-mix-image" src="../rooms/img/ambient breabeat vocal.jpg" alt="Mix artwork">
+      <div class="crt-screen">
+        <img
+          id="crtMixImage"
+          class="crt-mix-image"
+          src="./img/remasterjungle4.png"
+          alt="Mix artwork"
+        />
+
         <div class="crt-static"></div>
 
         <div class="crt-content">
-          <img id="crtMixImage" class="crt-mix-image" src="" alt="Mix artwork">
           <p class="crt-now-playing">NOW PLAYING</p>
           <h2 id="crtTrackName">JUNGLE MIX 01</h2>
           <p class="crt-status">SIGNAL STABLE</p>
+          
         </div>
       </div>
     </div>
 
     <button
-  class="jungle-zone mix-one"
-  data-audio="../assets/audio/mix-01.mp3"
-  data-image="../assets/images/mix-01.png"
-  data-message="MIX 01 SELECTED: Fast drums. Soft memories."
->
-  MIX 01
-</button>
-
-<button
-  class="jungle-zone mix-two"
-  data-audio="../assets/audio/mix-02.mp3"
-  data-image="../assets/images/mix-02.png"
-  data-message="MIX 02 SELECTED: Bass echoes through the trees."
->
-  MIX 02
-</button>
-
-    <button
-      class="jungle-zone npc-zone"
-      data-message="NPC: This place only appears when the beat finds you."
+      class="jungle-zone mix-one"
+      data-audio="../assets/audio/mix-01.mp3"
+      data-image="./img/JungleRoom-LostTape.png"
+      data-message="MIX 01 SELECTED: Lost tapes. Found memories."
     >
-      NPC
+      MIX 01
     </button>
 
     <button
-    class="jungle-zone boombox-zone"
+      class="jungle-zone mix-two"
+      data-audio="../assets/audio/mix-02.mp3"
+      data-image="./img/RidgeRacer-LateNight.png"
+      data-message="MIX 02 SELECTED: Late nights. Fast lines."
+    >
+      MIX 02
+    </button>
+
+    <button
+  class="jungle-zone npc-zone"
+  data-message="NPC: This place only appears when the beat finds you."
+  data-image="./img/character boy.png"
+>
+  NPC
+</button>
+
+    <button
+      class="jungle-zone boombox-zone"
       data-message="The boombox crackles... but the signal is still alive."
     >
       BOOMBOX
