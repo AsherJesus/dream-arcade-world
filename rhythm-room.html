@@ -12,11 +12,28 @@
 <body>
 
   <div class="custom-cursor"></div>
+  <main class="rhythm-room">
 
   <main class="rhythm-room">
 
     <div class="scanlines"></div>
     <div class="pixel-noise"></div>
+
+    <div class="moving-clouds">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+
+
+    <div class="seagulls">
+
+  <span>🕊</span>
+  <span>🕊</span>
+  <span>🕊</span>
+
+</div>
 
     <a href="../index.html" class="back-button">
       ← BACK TO ARCADE
@@ -28,35 +45,55 @@
 
     <div class="jukebox-screen">
 
-      <button class="arrow up-arrow">
-        ▲
-      </button>
+      <button class="arrow left-arrow">
+  ◀
+</button>
 
       <div class="music-display">
 
         <img
           id="rhythmImage"
-          src="./img/mix-01.png"
+          src="./img/beach-love.png"
           alt="Rhythm Mix"
         />
 
         <h2 id="rhythmTrack">
-          DREAM SIGNAL
+          BEACH LOVE
         </h2>
 
       </div>
 
-      <button class="arrow down-arrow">
-        ▼
-      </button>
+      <button class="arrow right-arrow">
+  ▶
+</button>
 
     </div>
 
     <div class="rhythm-dialogue">
-      Tropical rhythm signal detected...
+      Warm beach sunset rhythm loaded.
     </div>
 
+    <div class="free-play">
+  FREE PLAY
+</div>
+
+<div class="arcade-info">
+
+  <span>STAGE 01</span>
+
+  <span id="bpmCounter">
+    132 BPM
+  </span>
+
+  <span>PLAYER 1 READY</span>
+
+</div>
+
   </main>
+
+  <audio id="rhythmAudio"></audio>
+
+<audio id="menuClick" src="../assets/audio/menu-click.mp3"></audio>
 
   <script src="../script.js"></script>
 
