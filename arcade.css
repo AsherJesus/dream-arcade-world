@@ -189,6 +189,30 @@ a,
   z-index: 15;
 }
 
+.hotspot.door {
+  position: absolute;
+
+  left: 72%;
+  top: 46%;
+
+  width: 90px;
+  height: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+
+  line-height: 1;
+
+  padding: 0;
+
+  text-decoration: none;
+
+  z-index: 20;
+}
+
 .hotspot:hover {
   box-shadow:
     0 0 35px rgba(0, 255, 255, 0.75),
@@ -196,7 +220,7 @@ a,
 }
 
 .arcade-machine {
-  left: 50%;
+  left: 40%;
   top: 38%;
   transform: translateX(-50%);
   font-size: 7rem;
@@ -994,15 +1018,95 @@ a,
 
 .custom-cursor {
   position: fixed;
+
   width: 22px;
   height: 28px;
-  background: #72864d;
-  clip-path: polygon(0 0, 0 100%, 35% 70%, 55% 100%, 75% 90%, 55% 60%, 100% 60%);
+
+  background: white;
+
+  clip-path:
+    polygon(
+      0 0,
+      0 100%,
+      35% 70%,
+      55% 100%,
+      75% 90%,
+      55% 60%,
+      100% 60%
+    );
+
   z-index: 99999;
+
   pointer-events: none;
-  filter: drop-shadow(0 0 5px #72864d);
+
+  transition:
+    background 0.2s ease,
+    filter 0.2s ease;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255,255,255,0.7));
 }
 
+.custom-cursor {
+  position: fixed;
+
+  width: 22px;
+  height: 28px;
+
+  background: white;
+
+  clip-path:
+    polygon(
+      0 0,
+      0 100%,
+      35% 70%,
+      55% 100%,
+      75% 90%,
+      55% 60%,
+      100% 60%
+    );
+
+  z-index: 99999;
+
+  pointer-events: none;
+
+  transition:
+    background 0.2s ease,
+    filter 0.2s ease;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255,255,255,0.7));
+}
+
+/* MAIN ROOM */
+
+body:has(.arcade-room) .custom-cursor {
+  background: #ff66d9;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,0,200,0.9));
+}
+
+body:has(.rhythm-room) .custom-cursor {
+  background: #ffcf7a;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,180,80,0.9));
+}
+
+body:has(.depth-room) .custom-cursor {
+  background: #b4d9ff;
+
+  filter:
+    drop-shadow(0 0 8px rgba(180,220,255,0.9));
+}
+
+body:has(.alien-room) .custom-cursor {
+  background: #7dff9e;
+
+  filter:
+    drop-shadow(0 0 8px rgba(0,255,120,0.9));
+}
 /* =========================
    VHS / FIREFLY PARTICLES
 ========================= */
@@ -1181,16 +1285,18 @@ a,
 
 /* MAIN SCREEN */
 
+/* JUKEBOX SCREEN */
+
 .jukebox-screen {
   position: absolute;
 
   left: 50%;
-  top: 54%;
+  top: 52%;
 
   transform: translate(-50%, -50%);
 
-  width: 340px;
-  height: 460px;
+  width: 760px;
+  height: 620px;
 
   background:
     linear-gradient(
@@ -1220,13 +1326,13 @@ a,
   backdrop-filter: blur(6px);
 }
 
-/* DISPLAY */
+/* SCREEN DISPLAY */
 
 .music-display {
   position: relative;
 
-  width: 78%;
-  height: 58%;
+  width: 92%;
+  height: 78%;
 
   overflow: hidden;
 
@@ -1236,7 +1342,29 @@ a,
     2px solid rgba(255,220,120,0.35);
 
   box-shadow:
-    inset 0 0 18px rgba(255,180,80,0.15);
+    inset 0 0 18px rgba(255,180,80,0.15),
+    0 0 20px rgba(255,180,80,0.2);
+
+  background: black;
+}
+
+/* IMAGE */
+
+.music-display img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+
+  border-radius: 12px;
+
+  image-rendering: pixelated;
+
+  opacity: 0.98;
 }
 
 .music-display img {
@@ -1245,7 +1373,15 @@ a,
 
   object-fit: cover;
 
-  opacity: 0.95;
+  object-position: center;
+
+  display: block;
+
+  border-radius: 12px;
+
+  image-rendering: pixelated;
+
+  opacity: 0.98;
 }
 
 /* TRACK TEXT */
@@ -1273,15 +1409,27 @@ a,
 }
 
 /* ARROWS */
-
 .arrow {
-  background: transparent;
+  position: absolute;
 
-  border: none;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(255,220,120,0.4);
+
+  background:
+    rgba(0,0,0,0.55);
 
   color: #ffe8b8;
 
-  font-size: 2rem;
+  font-size: 2.2rem;
 
   cursor: pointer;
 
@@ -1289,14 +1437,31 @@ a,
 
   text-shadow:
     0 0 10px rgba(255,220,120,0.8);
+
+  box-shadow:
+    0 0 18px rgba(255,180,80,0.25);
+
+  z-index: 50;
 }
 
 .arrow:hover {
-  transform: scale(1.15);
+  transform:
+    translateY(-50%)
+    scale(1.08);
 
   color: white;
+
+  box-shadow:
+    0 0 25px rgba(255,200,120,0.5);
 }
 
+.left-arrow {
+  left: -120px;
+}
+
+.right-arrow {
+  right: -120px;
+}
 /* DIALOGUE */
 
 .rhythm-dialogue {
@@ -1328,3 +1493,1013 @@ a,
   z-index: 25;
 }
 
+/* =========================
+   SONG TRANSITION
+========================= */
+
+.music-display img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  display: block;
+
+  border-radius: 12px;
+
+  image-rendering: pixelated;
+
+  opacity: 0.98;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+/* FLASH EFFECT */
+
+.music-display.flash img {
+  opacity: 0.25;
+
+  transform: scale(1.03);
+
+  filter:
+    brightness(1.35)
+    saturate(1.3);
+}
+
+/* FREE PLAY */
+
+.free-play {
+  position: fixed !important;
+
+  top: 30px !important;
+  right: 35px !important;
+
+  z-index: 99999 !important;
+
+  font-size: 1rem;
+
+  color: #ffcf7a;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 0 10px rgba(255,190,90,0.95),
+    0 0 22px rgba(255,140,40,0.65),
+    0 0 40px rgba(255,120,0,0.35);
+
+  animation: freePlayBlink 1.2s infinite;
+
+  pointer-events: none;
+}
+
+@keyframes freePlayBlink {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+/* =========================
+   ARCADE INFO
+========================= */
+
+.arcade-info {
+  position: absolute;
+
+  left: 20px;
+  bottom: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  z-index: 60;
+
+  color: #fff0ba;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 12px rgba(255,220,120,0.8);
+}
+
+.arcade-info span {
+  background: rgba(0,0,0,0.45);
+
+  padding: 6px 10px;
+
+  border-radius: 8px;
+
+  border:
+    1px solid rgba(255,220,120,0.25);
+}
+
+/* =========================
+   SEAGULLS
+========================= */
+
+.seagulls {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+.seagulls span {
+  position: absolute;
+
+  color: rgba(255,255,255,0.85);
+
+  font-size: 1.8rem;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.45);
+
+  animation: flyAcross linear infinite;
+}
+
+/* BIRD 1 */
+
+.seagulls span:nth-child(1) {
+
+  top: 14%;
+
+  animation-duration: 18s;
+
+}
+
+/* BIRD 2 */
+
+.seagulls span:nth-child(2) {
+
+  top: 24%;
+
+  animation-duration: 24s;
+
+  animation-delay: 4s;
+
+}
+
+/* BIRD 3 */
+
+.seagulls span:nth-child(3) {
+
+  top: 18%;
+
+  animation-duration: 20s;
+
+  animation-delay: 8s;
+
+}
+
+/* FLYING */
+
+@keyframes flyAcross {
+
+  0% {
+
+    transform:
+      translateX(-200px);
+
+    opacity: 0;
+
+  }
+
+  10% {
+
+    opacity: 1;
+
+  }
+
+  90% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    transform:
+      translateX(120vw);
+
+    opacity: 0;
+
+  }
+}
+
+/* =========================
+   RHYTHM ROOM POLISH
+========================= */
+
+.jukebox-screen {
+  animation: softJukeboxGlow 3s infinite ease-in-out;
+}
+
+.screen-pulse {
+  transform: translate(-50%, -50%) scale(1.02) !important;
+  filter: brightness(1.15);
+}
+
+@keyframes softJukeboxGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 35px rgba(255,180,80,0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 55px rgba(255,190,90,0.55);
+  }
+}
+
+/* CLOUDS */
+
+.moving-clouds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.moving-clouds span {
+  position: absolute;
+  width: 180px;
+  height: 55px;
+  background: rgba(255, 235, 190, 0.28);
+  border-radius: 50%;
+  filter: blur(18px);
+  animation: cloudDrift 26s linear infinite;
+}
+
+.moving-clouds span:nth-child(1) {
+  top: 14%;
+  left: -220px;
+}
+
+.moving-clouds span:nth-child(2) {
+  top: 28%;
+  left: -320px;
+  animation-delay: 8s;
+}
+
+.moving-clouds span:nth-child(3) {
+  top: 20%;
+  left: -420px;
+  animation-delay: 15s;
+}
+
+@keyframes cloudDrift {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(140vw);
+  }
+}
+
+/* PIXEL DANCERS */
+
+.pixel-dancers {
+  position: absolute;
+  left: 50%;
+  bottom: 13%;
+  transform: translateX(-50%);
+  z-index: 55;
+  display: flex;
+  gap: 28px;
+  font-size: 2.2rem;
+  pointer-events: none;
+}
+
+.pixel-dancers span {
+  animation: dancerBounce 0.65s infinite ease-in-out;
+  filter: drop-shadow(0 0 8px rgba(255,190,90,0.7));
+}
+
+.pixel-dancers span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+@keyframes dancerBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================
+   DEPTH ROOM
+========================= */
+
+.depth-room {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(40,40,60,0.8),
+      black 80%
+    );
+
+  perspective: 1200px;
+}
+
+/* BACKGROUND */
+
+.depth-background {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    url("./rooms/img/depth-bg.png")
+    no-repeat center center/cover;
+
+  opacity: 0.55;
+
+  transform:
+    scale(1.08);
+
+  transition:
+    transform 0.2s ease;
+}
+
+/* DEPTH LAYERS */
+
+.depth-layer {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.15s ease;
+}
+
+.layer-one {
+  background:
+    radial-gradient(
+      circle,
+      rgba(120,180,255,0.12),
+      transparent 60%
+    );
+
+  mix-blend-mode: screen;
+}
+
+.layer-two {
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.03),
+      transparent
+    );
+
+  opacity: 0.6;
+}
+
+.layer-three {
+  backdrop-filter: blur(2px);
+}
+
+/* LIGHT */
+
+.depth-light {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(180,220,255,0.18),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+}
+
+/* TITLE */
+
+.depth-title {
+  position: absolute;
+
+  top: 10%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: white;
+
+  font-size: clamp(2rem, 5vw, 5rem);
+
+  letter-spacing: 8px;
+
+  text-shadow:
+    0 0 20px rgba(180,220,255,0.45);
+
+  z-index: 30;
+}
+
+/* TEXT */
+
+.depth-text {
+  position: absolute;
+
+  bottom: 12%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(255,255,255,0.8);
+
+  letter-spacing: 3px;
+
+  font-size: 1rem;
+
+  z-index: 30;
+}
+
+/* =========================
+   DEPTH ROOM EXTRAS
+========================= */
+
+.depth-room {
+  animation: breathingRoom 6s infinite ease-in-out;
+}
+
+.depth-floating {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.depth-floating span {
+  position: absolute;
+  color: rgba(180, 220, 255, 0.55);
+  font-size: 3rem;
+  text-shadow: 0 0 20px rgba(180,220,255,0.7);
+  animation: floatDepth 8s infinite ease-in-out;
+}
+
+.depth-floating span:nth-child(1) {
+  left: 18%;
+  top: 30%;
+}
+
+.depth-floating span:nth-child(2) {
+  right: 20%;
+  top: 38%;
+  animation-delay: 1.4s;
+}
+
+.depth-floating span:nth-child(3) {
+  left: 35%;
+  bottom: 22%;
+  animation-delay: 2.6s;
+}
+
+.depth-floating span:nth-child(4) {
+  right: 35%;
+  bottom: 28%;
+  animation-delay: 3.8s;
+}
+
+.depth-messages {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  z-index: 40;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  line-height: 1.8;
+  text-shadow: 0 0 12px rgba(180,220,255,0.5);
+}
+
+.depth-messages p {
+  opacity: 0;
+  animation: messageFade 9s infinite;
+}
+
+.depth-messages p:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.depth-messages p:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@keyframes breathingRoom {
+  0%, 100% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.12);
+  }
+}
+
+@keyframes floatDepth {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-28px) rotate(8deg);
+  }
+}
+
+@keyframes messageFade {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  20%, 45% {
+    opacity: 1;
+  }
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 999999;
+  pointer-events: none;
+  opacity: 1;
+  animation: pageFadeIn 1.1s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* =========================
+   ALIEN ROOM
+========================= */
+
+.alien-room {
+  position: relative;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  font-family: "Courier New", monospace;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.45)
+    ),
+    url("./rooms/img/alien-bg.png")
+    no-repeat center center/cover;
+
+  color: #b8ff7a;
+}
+
+/* TITLE */
+
+.alien-title {
+  position: absolute;
+
+  top: 7%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 30;
+
+  font-size: clamp(2rem, 5vw, 5rem);
+
+  letter-spacing: 6px;
+
+  color: #b8ff7a;
+
+  text-shadow:
+    0 0 10px #00ff66,
+    0 0 25px rgba(0,255,120,0.7);
+}
+
+/* DIALOGUE */
+
+.alien-dialogue {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  transform: translateX(-50%);
+
+  width: min(90%, 720px);
+
+  padding: 1rem 1.2rem;
+
+  background: rgba(0,0,0,0.75);
+
+  border:
+    2px solid rgba(184,255,122,0.5);
+
+  color: #eaffd5;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 25px rgba(0,255,120,0.35);
+
+  z-index: 35;
+}
+
+/* =========================
+   ALIEN STARS
+========================= */
+
+.space-stars {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 5;
+}
+
+.space-stars span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 10px white;
+
+  animation:
+    starFloat linear infinite;
+}
+
+.space-stars span:nth-child(1) {
+  left: 12%;
+  top: 20%;
+  animation-duration: 8s;
+}
+
+.space-stars span:nth-child(2) {
+  left: 35%;
+  top: 40%;
+  animation-duration: 12s;
+}
+
+.space-stars span:nth-child(3) {
+  left: 55%;
+  top: 18%;
+  animation-duration: 10s;
+}
+
+.space-stars span:nth-child(4) {
+  left: 72%;
+  top: 52%;
+  animation-duration: 14s;
+}
+
+.space-stars span:nth-child(5) {
+  left: 88%;
+  top: 26%;
+  animation-duration: 9s;
+}
+
+@keyframes starFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+
+}
+
+/* RADAR */
+
+.alien-radar {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  z-index: 40;
+
+  padding: 10px 14px;
+
+  background:
+    rgba(0,0,0,0.7);
+
+  border:
+    1px solid rgba(0,255,120,0.5);
+
+  color:
+    #7dff9e;
+
+  letter-spacing: 2px;
+
+  font-size: 0.8rem;
+
+  text-shadow:
+    0 0 12px rgba(0,255,120,0.8);
+
+  animation:
+    radarBlink 1.5s infinite;
+}
+
+@keyframes radarBlink {
+
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+
+}
+
+.hotspot.alien {
+  position: absolute;
+
+  left: 58%;
+  top: 22%;
+
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4rem;
+
+  line-height: 1;
+
+  padding: 0;
+
+  text-decoration: none;
+
+  z-index: 20;
+}
+
+/* =========================
+   FLOATING HOTSPOTS
+========================= */
+
+.hotspot {
+  animation:
+    floatHotspot 3.2s ease-in-out infinite;
+}
+
+/* EACH ICON DIFFERENT TIMING */
+
+.arcade-machine {
+  animation-delay: 0s;
+}
+
+.jungle-poster {
+  animation-delay: 0.5s;
+}
+
+.alien {
+  animation-delay: 1s;
+}
+
+.radio {
+  animation-delay: 1.5s;
+}
+
+.door {
+  animation-delay: 2s;
+}
+
+/* FLOAT */
+
+@keyframes floatHotspot {
+
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  /* MAIN TITLE */
+
+  .neon-sign,
+  .jungle-title,
+  .rhythm-title,
+  .depth-title,
+  .alien-title {
+
+    font-size: 2rem;
+
+    text-align: center;
+
+    width: 90%;
+  }
+
+  /* HOTSPOTS */
+
+  .hotspot {
+
+    font-size: 2.5rem;
+
+    padding: 0.6rem;
+  }
+
+  /* MAIN ROOM ICONS */
+
+  .arcade-machine {
+    left: 12%;
+    top: 52%;
+  }
+
+  .jungle-poster {
+    left: 70%;
+    top: 58%;
+  }
+
+  .alien {
+    left: 68%;
+    top: 18%;
+  }
+
+  .radio {
+    left: 18%;
+    top: 72%;
+  }
+
+  .door {
+    left: 42%;
+    top: 34%;
+  }
+
+  /* DIALOGUE BOXES */
+
+  .dialogue-box,
+  .jungle-dialogue,
+  .rhythm-dialogue,
+  .alien-dialogue {
+
+    width: 88%;
+
+    font-size: 0.9rem;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  /* JUKEBOX */
+
+  .jukebox-screen {
+
+    width: 92%;
+
+    height: 58%;
+
+    top: 52%;
+  }
+
+  .music-display {
+
+    width: 92%;
+
+    height: 72%;
+  }
+
+  /* ARROWS */
+
+  .arrow {
+
+    width: 65px;
+    height: 65px;
+
+    font-size: 1.4rem;
+  }
+
+  .left-arrow {
+
+    left: -18px;
+  }
+
+  .right-arrow {
+
+    right: -18px;
+  }
+
+  /* BPM + FREE PLAY */
+
+  .arcade-info {
+
+    left: 10px;
+
+    bottom: 10px;
+
+    font-size: 0.65rem;
+  }
+
+  .free-play {
+
+    top: 14px !important;
+
+    right: 14px !important;
+
+    font-size: 0.75rem;
+  }
+
+  /* DEPTH TEXT */
+
+  .depth-text {
+
+    width: 90%;
+
+    text-align: center;
+
+    font-size: 0.9rem;
+  }
+
+  /* ALIEN RADAR */
+
+  .alien-radar {
+
+    font-size: 0.65rem;
+
+    padding: 8px 10px;
+  }
+
+}
