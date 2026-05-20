@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./arcade.css" />
 </head>
 <body>
+
   <div class="custom-cursor"></div>
 
   <main class="arcade-room">
@@ -25,10 +26,13 @@
   🌴
 </a>
 
-    <button class="hotspot npc" data-message="NPC: I was waiting here. You came back different this time.">
-      👾
-    </button>
-
+   <a
+  href="rooms/alien-room.html"
+  class="hotspot alien"
+  data-message="Unknown signal detected from Sector X-51..."
+>
+  👽
+</a>
    <a
   href="rooms/rhythm-room.html"
   class="hotspot radio"
@@ -36,9 +40,13 @@
 >
   📻
 </a>
-    <button class="hotspot exit-door" data-message="The door is locked. Maybe the arcade wants you to stay longer.">
-      🚪
-    </button>
+   <a
+  href="rooms/depth-room.html"
+  class="hotspot door"
+  data-message="The room behind this door doesn't feel real..."
+>
+  🚪
+</a>
 
     <div class="dialogue-box" id="dialogueBox">
       Click around the room...
