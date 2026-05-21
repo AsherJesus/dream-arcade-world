@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Rhythm Room</title>
+
+  <link rel="stylesheet" href="../arcade.css" />
+</head>
+
 <body>
 
   <div class="custom-cursor"></div>
@@ -29,27 +40,21 @@
 
     <div class="jukebox-screen">
 
-      <button class="arrow left-arrow">
-        ◀
-      </button>
+      <button class="arrow left-arrow">◀</button>
 
       <div class="music-display">
-
         <img
           id="rhythmImage"
-          src="./img/beach-love.png"
+          src="./img/ddr beach-love.png"
           alt="Rhythm Mix"
         />
 
         <h2 id="rhythmTrack">
           BEACH LOVE
         </h2>
-
       </div>
 
-      <button class="arrow right-arrow">
-        ▶
-      </button>
+      <button class="arrow right-arrow">▶</button>
 
     </div>
 
@@ -62,22 +67,16 @@
     </div>
 
     <div class="arcade-info">
-
       <span>STAGE 01</span>
-
-      <span id="bpmCounter">
-        132 BPM
-      </span>
-
+      <span id="bpmCounter">118 BPM</span>
       <span>PLAYER 1 READY</span>
-
     </div>
 
     <audio id="rhythmAudio"></audio>
 
     <audio
       id="menuClick"
-      src="../assets/audio/menu-click.mp3"
+      src="../assets/audio/sfx/menu-click.mp3"
     ></audio>
 
   </main>
@@ -85,3 +84,4 @@
   <script src="../script.js"></script>
 
 </body>
+</html>
