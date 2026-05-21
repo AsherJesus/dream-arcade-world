@@ -2495,33 +2495,34 @@ body:has(.alien-room) .custom-cursor {
     padding: 0.6rem;
   }
 
-  /* MAIN ROOM ICONS */
 
-  .arcade-machine {
-    left: 12%;
-    top: 52%;
-  }
+/* MOBILE ROOM ICONS */
 
-  .jungle-poster {
-    left: 70%;
-    top: 58%;
-  }
+.arcade-machine {
+  left: 8%;
+  top: 48%;
+}
 
-  .alien {
-    left: 68%;
-    top: 18%;
-  }
+.jungle-poster {
+  left: 72%;
+  top: 60%;
+}
 
-  .radio {
-    left: 18%;
-    top: 72%;
-  }
+.alien {
+  left: 60%;
+  top: 24%;
+}
 
-  .door {
-    left: 42%;
-    top: 34%;
-  }
+.radio {
+  left: 14%;
+  top: 74%;
+}
 
+.door {
+  left: 72%;
+  top: 48%;
+}
+ 
   /* DIALOGUE BOXES */
 
   .dialogue-box,
