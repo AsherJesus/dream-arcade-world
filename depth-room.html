@@ -10,27 +10,12 @@
 </head>
 
 <body>
-<div class="page-transition"></div>
+
+  <div class="page-transition"></div>
 
   <div class="custom-cursor"></div>
-  <main class="depth-room">
 
   <main class="depth-room">
-
-   <div class="depth-floating">
-
-  <span>△</span>
-  <span>◯</span>
-  <span>✕</span>
-  <span>▢</span>
-
-</div>
-
-<div class="depth-messages">
-  <p>MEMORY FRAGMENT FOUND</p>
-  <p>SIGNAL UNSTABLE</p>
-  <p>YOU HAVE BEEN HERE BEFORE</p>
-</div>
 
     <div class="depth-background"></div>
 
@@ -39,6 +24,19 @@
     <div class="depth-layer layer-three"></div>
 
     <div class="depth-light"></div>
+
+    <div class="depth-floating">
+      <span>△</span>
+      <span>◯</span>
+      <span>✕</span>
+      <span>▢</span>
+    </div>
+
+    <div class="depth-messages">
+      <p>MEMORY FRAGMENT FOUND</p>
+      <p>SIGNAL UNSTABLE</p>
+      <p>YOU HAVE BEEN HERE BEFORE</p>
+    </div>
 
     <h1 class="depth-title">
       MEMORY DEPTH
@@ -52,13 +50,13 @@
       ← EXIT DEPTH
     </a>
 
-  </main>
+    <audio
+      id="depthAmbient"
+      src="../assets/audio/depth/depth-ambient.mp3"
+      loop
+    ></audio>
 
-  <audio
-  id="depthAmbient"
-  src="../assets/audio/depth/depth-ambient.mp3"
-  loop
-></audio>
+  </main>
 
   <script src="../script.js"></script>
 
