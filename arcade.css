@@ -2675,22 +2675,22 @@ body:has(.alien-room) .custom-cursor {
 
   /* ARROWS */
 
-  .arrow {
+ .arrow {
+  width: 58px;
+  height: 58px;
 
-    display: none;
+  font-size: 1.3rem;
 
-    font-size: 1.4rem;
-  }
+  top: 50%;
+}
 
-  .left-arrow {
+.left-arrow {
+  left: -8px;
+}
 
-    left: -18px;
-  }
-
-  .right-arrow {
-
-    right: -18px;
-  }
+.right-arrow {
+  right: -8px;
+}
 
   /* BPM + FREE PLAY */
 
