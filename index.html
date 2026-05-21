@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dream Arcade</title>
+  <link rel="stylesheet" href="./arcade.css" />
+</head>
+<body>
+
+  <div class="custom-cursor"></div>
+
+  <main class="arcade-room">
+
+    <div class="grain"></div>
+    <div class="fog fog-one"></div>
+    <div class="fog fog-two"></div>
+
+    <h1 class="neon-sign">DREAM ARCADE</h1>
+
+    <button class="hotspot arcade-machine" data-message="The machine is still running... but nobody is playing.">
+      🕹️
+    </button>
+
+<a href="./rooms/jungle-room.html" class="hotspot jungle-poster">🌴</a>
+
+<a href="./rooms/alien-room.html" class="hotspot alien" data-message="Unknown signal detected from Sector X-51...">👽</a>
+
+<a href="./rooms/rhythm-room.html" class="hotspot radio" data-message="A warm rhythm signal leaks through the speakers...">📻</a>
+
+<a href="./rooms/depth-room.html" class="hotspot door" data-message="The room behind this door doesn't feel real...">🚪</a>
+
+    <div class="dialogue-box" id="dialogueBox">
+      Click around the room...
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
