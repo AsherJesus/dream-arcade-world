@@ -1009,10 +1009,6 @@ a,
 }
 
 * {
-  cursor: url("./rooms/img/assets/images/olive-ps1-cursor.png"), auto !important;
-}
-
-* {
   cursor: none !important;
 }
 
@@ -1047,44 +1043,18 @@ a,
     drop-shadow(0 0 5px rgba(255,255,255,0.7));
 }
 
-.custom-cursor {
-  position: fixed;
-
-  width: 22px;
-  height: 28px;
-
-  background: white;
-
-  clip-path:
-    polygon(
-      0 0,
-      0 100%,
-      35% 70%,
-      55% 100%,
-      75% 90%,
-      55% 60%,
-      100% 60%
-    );
-
-  z-index: 99999;
-
-  pointer-events: none;
-
-  transition:
-    background 0.2s ease,
-    filter 0.2s ease;
-
-  filter:
-    drop-shadow(0 0 5px rgba(255,255,255,0.7));
-}
-
-/* MAIN ROOM */
-
 body:has(.arcade-room) .custom-cursor {
   background: #ff66d9;
 
   filter:
     drop-shadow(0 0 8px rgba(255,0,200,0.9));
+}
+
+body:has(.jungle-room) .custom-cursor {
+  background: #b8ff7a;
+
+  filter:
+    drop-shadow(0 0 8px rgba(184,255,122,0.9));
 }
 
 body:has(.rhythm-room) .custom-cursor {
@@ -1107,6 +1077,7 @@ body:has(.alien-room) .custom-cursor {
   filter:
     drop-shadow(0 0 8px rgba(0,255,120,0.9));
 }
+
 /* =========================
    VHS / FIREFLY PARTICLES
 ========================= */
