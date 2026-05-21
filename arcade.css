@@ -888,6 +888,24 @@ a,
     0 0 25px rgba(114, 134, 77, 0.9),
     inset 0 0 20px rgba(114, 134, 77, 0.4) !important;
 }
+.jungle-room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  font-family: "Courier New", monospace;
+
+  color: #b8ff7a;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.55)
+    ),
+    url("./rooms/img/your-jungle-image.png")
+    no-repeat center center/cover;
+}
 
 /* animations */
 @keyframes blinkText {
@@ -1014,33 +1032,28 @@ a,
 
 .custom-cursor {
   position: fixed;
+  left: 0;
+  top: 0;
 
   width: 22px;
   height: 28px;
 
   background: white;
 
-  clip-path:
-    polygon(
-      0 0,
-      0 100%,
-      35% 70%,
-      55% 100%,
-      75% 90%,
-      55% 60%,
-      100% 60%
-    );
+  clip-path: polygon(
+    0 0,
+    0 100%,
+    35% 70%,
+    55% 100%,
+    75% 90%,
+    55% 60%,
+    100% 60%
+  );
 
-  z-index: 99999;
-
+  z-index: 9999999;
   pointer-events: none;
 
-  transition:
-    background 0.2s ease,
-    filter 0.2s ease;
-
-  filter:
-    drop-shadow(0 0 5px rgba(255,255,255,0.7));
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
 }
 
 body:has(.arcade-room) .custom-cursor {
@@ -1258,6 +1271,8 @@ body:has(.alien-room) .custom-cursor {
 
 /* JUKEBOX SCREEN */
 
+/* JUKEBOX */
+
 .jukebox-screen {
   position: absolute;
 
@@ -1285,16 +1300,146 @@ body:has(.alien-room) .custom-cursor {
 
   display: flex;
 
-  flex-direction: column;
-
   justify-content: center;
   align-items: center;
 
-  gap: 18px;
-
   z-index: 20;
 
-  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+
+/* IMAGE DISPLAY */
+
+.music-display {
+  position: relative;
+
+  width: 92%;
+  height: 78%;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: black;
+}
+
+.music-display img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* TRACK NAME */
+
+#rhythmTrack {
+  position: absolute;
+
+  bottom: 12px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: white;
+
+  z-index: 30;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 10px rgba(255,220,120,0.8);
+}
+
+/* ARROWS */
+
+.arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(255,220,120,0.4);
+
+  background:
+    rgba(0,0,0,0.55);
+
+  color: #ffe8b8;
+
+  font-size: 2rem;
+
+  z-index: 50;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+/* DIALOGUE */
+
+.rhythm-dialogue {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2%;
+
+  transform: translateX(-50%);
+
+  width: min(90%, 680px);
+
+  padding: 1rem;
+
+  background: rgba(0,0,0,0.65);
+
+  border:
+    2px solid rgba(255,220,120,0.4);
+
+  border-radius: 16px;
+
+  color: #fff2c4;
+
+  text-align: center;
+
+  z-index: 25;
+}
+
+/* FREE PLAY */
+
+.free-play {
+  position: fixed;
+
+  top: 25px;
+  right: 30px;
+
+  z-index: 999;
+
+  color: #ffcf7a;
+
+  letter-spacing: 3px;
+
+  animation: freePlayBlink 1.2s infinite;
+}
+
+@keyframes freePlayBlink {
+
+  0% { opacity: 1; }
+
+  50% { opacity: 0.35; }
+
+  100% { opacity: 1; }
+
 }
 
 /* SCREEN DISPLAY */
@@ -2417,8 +2562,7 @@ body:has(.alien-room) .custom-cursor {
 
   .arrow {
 
-    width: 65px;
-    height: 65px;
+    display: none;
 
     font-size: 1.4rem;
   }
@@ -2473,4 +2617,254 @@ body:has(.alien-room) .custom-cursor {
     padding: 8px 10px;
   }
 
+}
+* {
+  cursor: none !important;
+}
+
+/* =========================
+   RESTORE JUNGLE ROOM
+========================= */
+
+.jungle-room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+  color: #b8ff7a;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+    url("./rooms/img/ChatGPT\ Image\ May\ 17\,\ 2026\,\ 07_17_10\ PM.png")
+    no-repeat center center/cover;
+}
+
+#loadingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+.crt-zone {
+  left: 39%;
+  top: 34%;
+  width: 21%;
+  height: 30%;
+}
+
+.crt-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: black;
+}
+
+.crt-mix-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.88;
+  filter: contrast(1.15) saturate(1) brightness(1.1);
+  z-index: 1;
+}
+
+.crt-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d8ff9e;
+  text-align: center;
+}
+
+.mix-one {
+  left: 18%;
+  top: 45%;
+  width: 14%;
+  height: 18%;
+}
+
+.mix-two {
+  right: 16%;
+  top: 45%;
+  width: 14%;
+  height: 18%;
+}
+
+.npc-zone {
+  right: 26%;
+  bottom: 22%;
+  width: 10%;
+  height: 18%;
+}
+
+.boombox-zone {
+  left: 39%;
+  bottom: 20%;
+  width: 22%;
+  height: 13%;
+}
+
+.secret-zone {
+  left: 5%;
+  bottom: 8%;
+  width: 10%;
+  height: 12%;
+}
+
+/* =========================
+   RESTORE RHYTHM ROOM / JUKEBOX
+========================= */
+
+.rhythm-room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Courier New", monospace;
+
+  background:
+    linear-gradient(rgba(255,180,80,0.15), rgba(255,120,0,0.25)),
+    url("./rooms/img/beachlove.png") no-repeat center center/cover;
+
+  color: #ffe8b8;
+}
+
+.rhythm-title {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  letter-spacing: 6px;
+  color: #fff2c4;
+  text-shadow:
+    0 0 12px rgba(255,220,120,0.9),
+    0 0 25px rgba(255,150,0,0.6);
+}
+
+.jukebox-screen {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  height: 620px;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75));
+  border: 3px solid rgba(255,220,120,0.4);
+  border-radius: 22px;
+  box-shadow: 0 0 35px rgba(255,180,80,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  overflow: visible;
+}
+
+.music-display {
+  position: relative;
+  width: 92%;
+  height: 78%;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid rgba(255,220,120,0.35);
+  background: black;
+   touch-action: pan-y;
+}
+
+.music-display img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  image-rendering: pixelated;
+}
+
+#rhythmTrack {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255,220,120,0.8);
+  z-index: 30;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,220,120,0.4);
+  background: rgba(0,0,0,0.55);
+  color: #ffe8b8;
+  font-size: 2.2rem;
+  z-index: 50;
+}
+
+.left-arrow {
+  left: -120px;
+}
+
+.right-arrow {
+  right: -120px;
+}
+
+.rhythm-dialogue {
+  position: absolute;
+  left: 50%;
+  bottom: 1%;
+  transform: translateX(-50%);
+  width: min(90%, 680px);
+  padding: 1rem 1.2rem;
+  background: rgba(0,0,0,0.65);
+  border: 2px solid rgba(255,220,120,0.4);
+  border-radius: 16px;
+  color: #fff2c4;
+  text-align: center;
+  z-index: 25;
+}
+
+.free-play {
+  position: fixed !important;
+  top: 30px !important;
+  right: 35px !important;
+  z-index: 99999 !important;
+  color: #ffcf7a;
+  letter-spacing: 3px;
+  animation: freePlayBlink 1.2s infinite;
+}
+
+.arcade-info {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #fff0ba;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
 }
