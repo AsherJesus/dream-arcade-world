@@ -2834,3 +2834,159 @@ body:has(.alien-room) .custom-cursor {
   }
 
 }
+
+/* =========================
+   PHONE ROOM RESIZE FIX
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .back-button {
+    top: 45px;
+    left: 22px;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.65rem;
+  }
+
+  /* RHYTHM ROOM */
+
+  .rhythm-title {
+    top: 8%;
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
+
+  .jukebox-screen {
+    width: 92vw;
+    height: 50vh;
+    top: 47%;
+  }
+
+  .music-display {
+    width: 92%;
+    height: 82%;
+  }
+
+  .rhythm-dialogue {
+    bottom: 7%;
+    width: 88%;
+    font-size: 0.78rem;
+  }
+
+  .arcade-info {
+    left: 22px;
+    bottom: 95px;
+    font-size: 0.6rem;
+  }
+
+  .free-play {
+    top: 105px;
+    right: 24px;
+    font-size: 0.7rem;
+  }
+
+  /* JUNGLE ROOM */
+
+  .jungle-title {
+    top: 13%;
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .ps-button {
+    top: 27%;
+    font-size: 0.82rem;
+  }
+
+  .crt-zone {
+    left: 31%;
+    top: 39%;
+    width: 38%;
+    height: 18%;
+  }
+
+  .mix-one {
+    left: 8%;
+    top: 50%;
+    width: 22%;
+    height: 15%;
+  }
+
+  .mix-two {
+    right: 8%;
+    top: 50%;
+    width: 22%;
+    height: 15%;
+  }
+
+  .npc-zone {
+    right: 13%;
+    bottom: 26%;
+    width: 20%;
+    height: 16%;
+  }
+
+  .boombox-zone {
+    left: 35%;
+    bottom: 28%;
+    width: 30%;
+    height: 13%;
+  }
+
+  .ps1-hud {
+    left: 18px;
+    bottom: 135px;
+    font-size: 0.62rem;
+  }
+
+  .equalizer {
+    right: 22px;
+    bottom: 138px;
+  }
+
+  .jungle-dialogue {
+    bottom: 68px;
+    width: 88%;
+    font-size: 0.8rem;
+  }
+
+  /* DEPTH ROOM */
+
+  .depth-title {
+    top: 16%;
+    font-size: 2.1rem;
+    line-height: 1.35;
+  }
+
+  .depth-text {
+    bottom: 16%;
+    width: 85%;
+    font-size: 0.78rem;
+  }
+
+  .depth-messages {
+    left: 28px;
+    bottom: 105px;
+    font-size: 0.72rem;
+  }
+
+  /* ALIEN ROOM */
+
+  .alien-title {
+    top: 13%;
+    font-size: 2.2rem;
+    line-height: 1.25;
+  }
+
+  .alien-radar {
+    top: 46px;
+    right: 18px;
+    font-size: 0.58rem;
+  }
+
+  .alien-dialogue {
+    bottom: 82px;
+    width: 88%;
+    font-size: 0.8rem;
+  }
+}
