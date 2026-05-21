@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Jungle Mix Room</title>
-
-  <link rel="stylesheet" href="../arcade.css" />
-</head>
-
 <body>
 
   <div class="custom-cursor"></div>
-  <main class="jungle-room">
-  
+
   <div id="loadingScreen">
     <div class="loading-content">
       <p>LOADING JUNGLE MIX STATION...</p>
@@ -40,9 +28,13 @@
       <span></span>
     </div>
 
-    <a href="../index.html" class="back-button">← BACK TO ARCADE</a>
+    <a href="../index.html" class="back-button">
+      ← BACK TO ARCADE
+    </a>
 
-    <h1 class="jungle-title">JUNGLE MIX STATION</h1>
+    <h1 class="jungle-title">
+      JUNGLE MIX STATION
+    </h1>
 
     <button id="musicButton" class="ps-button">
       ✖ ENTER JUNGLE MIX
@@ -53,8 +45,13 @@
       <span>SIGNAL: JUNGLE</span>
     </div>
 
-    <div class="jungle-zone crt-zone" data-message="CRT: NOW PLAYING... DEEP IN THE JUNGLE">
+    <div
+      class="jungle-zone crt-zone"
+      data-message="CRT: NOW PLAYING... DEEP IN THE JUNGLE"
+    >
+
       <div class="crt-screen">
+
         <img
           id="crtMixImage"
           class="crt-mix-image"
@@ -65,12 +62,21 @@
         <div class="crt-static"></div>
 
         <div class="crt-content">
-          <p class="crt-now-playing">NOW PLAYING</p>
-          <h2 id="crtTrackName">JUNGLE MIX 01</h2>
-          <p class="crt-status">SIGNAL STABLE</p>
-          
+          <p class="crt-now-playing">
+            NOW PLAYING
+          </p>
+
+          <h2 id="crtTrackName">
+            JUNGLE MIX 01
+          </h2>
+
+          <p class="crt-status">
+            SIGNAL STABLE
+          </p>
         </div>
+
       </div>
+
     </div>
 
     <button
@@ -92,12 +98,12 @@
     </button>
 
     <button
-  class="jungle-zone npc-zone"
-  data-message="NPC: This place only appears when the beat finds you."
-  data-image="./img/character boy.png"
->
-  NPC
-</button>
+      class="jungle-zone npc-zone"
+      data-message="NPC: This place only appears when the beat finds you."
+      data-image="./img/character boy.png"
+    >
+      NPC
+    </button>
 
     <button
       class="jungle-zone boombox-zone"
@@ -128,5 +134,5 @@
   </main>
 
   <script src="../script.js"></script>
+
 </body>
-</html>
