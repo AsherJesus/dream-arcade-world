@@ -1229,12 +1229,21 @@ body:has(.alien-room) .custom-cursor {
 @media screen and (max-width: 768px) {
 
   #rhythmJukebox {
-    top: 48% !important;
+    width: 82vw;
+    height: 26vh;
+    top: 42% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .music-display {
+    width: 88%;
+    height: 80%;
   }
 
   .left-arrow,
   .right-arrow {
-    top: 48% !important;
+    top: 42% !important;
   }
 
 }
