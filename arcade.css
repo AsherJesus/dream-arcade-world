@@ -25,10 +25,16 @@ a,
 }
 
 .jungle-room {
-  background:
-    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+
+ background:
+    linear-gradient(
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.55)
+    ),
     url("./rooms/img/customjungle.png")
-    no-repeat center center/contain;
+    no-repeat center center;
+
+  background-size: contain;
 }
 
 .jungle-fog {
@@ -2841,34 +2847,68 @@ no-repeat center center/contain;
 
   /* RHYTHM ROOM */
 
-  .rhythm-title {
-    top: 8%;
-    font-size: 2rem;
-    letter-spacing: 6px;
-  }
+.rhythm-title {
 
-  #rhythmJukebox {
-  width: 84vw;
-  height: 40vh;
-  top: 47%;
+  top: 10%;
+
+  font-size: 2.2rem;
+
+  letter-spacing: 6px;
+
+  z-index: 40;
 }
 
-  .music-display {
-    width: 92%;
-    height: 82%;
-  }
+#rhythmJukebox {
 
-  .rhythm-dialogue {
-    bottom: 7%;
-    width: 88%;
-    font-size: 0.78rem;
-  }
+  width: 92vw;
 
-  .arcade-info {
-    left: 22px;
-    bottom: 110px;
-    font-size: 0.6rem;
-  }
+  height: 33vh;
+
+  top: 34%;
+}
+
+.music-display {
+
+  width: 94%;
+
+  height: 84%;
+}
+
+.arrow {
+
+  width: 58px;
+  height: 58px;
+
+  font-size: 1.3rem;
+}
+
+.left-arrow {
+
+  left: 6px;
+}
+
+.right-arrow {
+
+  right: 6px;
+}
+
+.rhythm-dialogue {
+
+  bottom: 7%;
+
+  width: 88%;
+
+  font-size: 0.78rem;
+}
+
+.arcade-info {
+
+  left: 22px;
+
+  bottom: 115px;
+
+  font-size: 0.6rem;
+}
 
   .free-play {
     top: 105px;
