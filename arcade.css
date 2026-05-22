@@ -2861,7 +2861,7 @@ no-repeat center center/contain;
   #rhythmJukebox {
     width: 92vw;
     height: 33vh;
-    top: 48%;
+    top: 50% !important;
     left: 50%;
     transform: translate(-50%, -50%);
   }
