@@ -1226,3 +1226,15 @@ body:has(.alien-room) .custom-cursor {
     font-size: 0.8rem;
   }
 }
+@media screen and (max-width: 768px) {
+
+  #rhythmJukebox {
+    top: 48% !important;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    top: 48% !important;
+  }
+
+}
