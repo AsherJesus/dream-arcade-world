@@ -1226,24 +1226,36 @@ body:has(.alien-room) .custom-cursor {
     font-size: 0.8rem;
   }
 }
+
 @media screen and (max-width: 768px) {
 
   #rhythmJukebox {
-    width: 82vw;
-    height: 26vh;
-    top: 42% !important;
+    width: 92vw;
+    height: 32vh;
+    top: 40% !important;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: visible;
   }
 
   .music-display {
     width: 88%;
-    height: 80%;
+    height: 82%;
   }
 
-  .left-arrow,
+  .arrow {
+    top: 50% !important;
+    width: 58px;
+    height: 58px;
+    font-size: 1.3rem;
+  }
+
+  .left-arrow {
+    left: -18px;
+  }
+
   .right-arrow {
-    top: 42% !important;
+    right: -18px;
   }
 
 }
