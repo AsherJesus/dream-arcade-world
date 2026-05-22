@@ -2857,13 +2857,14 @@ no-repeat center center/contain;
   z-index: 40;
 }
 
-#rhythmJukebox {
-
-  width: 92vw;
-
-  height: 33vh;
-
-  top: 48% !important;
+@media screen and (max-width: 768px) {
+  #rhythmJukebox {
+    width: 92vw;
+    height: 33vh;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .music-display {
