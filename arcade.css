@@ -2431,3 +2431,34 @@ no-repeat center center/contain;
     width: 88% !important;
   }
 }
+
+/* TABLET PORTRAIT FIX */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  .rhythm-room .left-arrow {
+    left: 8px !important;
+  }
+
+  .rhythm-room .right-arrow {
+    right: 8px !important;
+  }
+
+  .rhythm-room .arrow {
+    width: 62px !important;
+    height: 62px !important;
+    top: 50% !important;
+  }
+
+  .rhythm-room #rhythmJukebox,
+  .rhythm-room .jukebox-screen {
+    width: 86vw !important;
+    height: 42vh !important;
+    top: 42% !important;
+  }
+
+}
