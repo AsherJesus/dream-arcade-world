@@ -28,7 +28,7 @@ a,
   background:
     linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
     url("./rooms/img/customjungle.png")
-    no-repeat center center/cover;
+    no-repeat center center/contain;
 }
 
 .jungle-fog {
@@ -615,7 +615,7 @@ a,
 .ps1-hud {
   position: absolute;
   left: 20px;
-  bottom: 110px;
+  bottom: 194px;
   z-index: 31;
   display: flex;
   flex-direction: column;
@@ -1061,7 +1061,7 @@ a,
 
   .secret-zone {
     left: 3%;
-    bottom: 9%;
+    bottom: 11%;
     width: 16%;
     height: 10%;
   }
@@ -1314,7 +1314,7 @@ body:has(.alien-room) .custom-cursor {
 
 /* JUKEBOX */
 
-.jukebox-screen {
+#rhythmJukebox {
   position: absolute;
 
   left: 50%;
@@ -1869,7 +1869,7 @@ body:has(.alien-room) .custom-cursor {
    RHYTHM ROOM POLISH
 ========================= */
 
-.jukebox-screen {
+#rhythmJukebox {
   animation: softJukeboxGlow 3s infinite ease-in-out;
 }
 
@@ -2245,7 +2245,7 @@ body:has(.alien-room) .custom-cursor {
 
 .alien-room {
   position: relative;
-
+  background-size: contain;
   width: 100vw;
   height: 100vh;
 
@@ -2258,8 +2258,8 @@ body:has(.alien-room) .custom-cursor {
       rgba(0,0,0,0.15),
       rgba(0,0,0,0.45)
     ),
-    url("./rooms/img/alien-bg.png")
-    no-repeat center center/cover;
+   url("./rooms/img/alien-bg.png")
+no-repeat center center/contain;
 
   color: #b8ff7a;
 }
@@ -2517,8 +2517,8 @@ body:has(.alien-room) .custom-cursor {
 /* DESKTOP */
 
 .hotspot.arcade-machine {
-  left: 40%;
-  top: 38%;
+        left: 38%;
+        top: 45%;
 }
 
 .hotspot.alien {
@@ -2537,8 +2537,8 @@ body:has(.alien-room) .custom-cursor {
 }
 
 .hotspot.door {
-  left: 72%;
-  top: 46%;
+  left: 65%;
+  top: 70%;
 }
 
 
@@ -2585,8 +2585,8 @@ body:has(.alien-room) .custom-cursor {
   }
 
   .hotspot.arcade-machine {
-    left: 8%;
-    top: 48%;
+        left: 38%;
+        top: 45%;
   }
 
   .hotspot.alien {
@@ -2596,7 +2596,7 @@ body:has(.alien-room) .custom-cursor {
 
   .hotspot.radio {
     left: 12%;
-    top: 74%;
+    top: 67%;
     bottom: auto;
   }
 
@@ -2606,8 +2606,8 @@ body:has(.alien-room) .custom-cursor {
   }
 
   .hotspot.door {
-    left: 74%;
-    top: 48%;
+    left: 8%;
+    top: 23%;
   }
 
 }
@@ -2657,14 +2657,15 @@ body:has(.alien-room) .custom-cursor {
 
   /* JUKEBOX */
 
-  .jukebox-screen {
-
-    width: 92%;
-
-    height: 58%;
-
-    top: 52%;
-  }
+  #rhythmJukebox {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  height: 620px;
+  overflow: visible;
+}
 
   .music-display {
 
@@ -2675,22 +2676,22 @@ body:has(.alien-room) .custom-cursor {
 
   /* ARROWS */
 
- .arrow {
-  width: 58px;
-  height: 58px;
+  .arrow {
 
-  font-size: 1.3rem;
+    display: none;
 
-  top: 50%;
-}
+    font-size: 1.4rem;
+  }
 
-.left-arrow {
-  left: -8px;
-}
+  .left-arrow {
 
-.right-arrow {
-  right: -8px;
-}
+    left: -18px;
+  }
+
+  .right-arrow {
+
+    right: -18px;
+  }
 
   /* BPM + FREE PLAY */
 
@@ -2736,11 +2737,7 @@ body:has(.alien-room) .custom-cursor {
   cursor: none !important;
 }
 
-.jukebox-screen {
-  width: 760px;
-  height: 620px;
-  overflow: visible;
-}
+
 
 .music-display {
   width: 92%;
@@ -2748,11 +2745,7 @@ body:has(.alien-room) .custom-cursor {
 }
 
 @media screen and (max-width: 768px) {
-  .jukebox-screen {
-    width: 92%;
-    height: 58%;
-  }
-
+ 
   .music-display {
     width: 92%;
     height: 72%;
@@ -2762,21 +2755,6 @@ body:has(.alien-room) .custom-cursor {
 /* =========================
    RHYTHM ARROW FIX
 ========================= */
-
-.jukebox-screen {
-  position: absolute;
-
-  left: 50%;
-  top: 52%;
-
-  transform: translate(-50%, -50%);
-
-  width: 760px;
-  height: 620px;
-
-  overflow: visible;
-}
-
 .arrow {
   position: absolute;
 
@@ -2812,9 +2790,22 @@ body:has(.alien-room) .custom-cursor {
 
 @media screen and (max-width: 768px) {
 
-  .arrow {
-    display: none;
-  }
+ .arrow {
+  width: 58px;
+  height: 58px;
+
+  font-size: 1.3rem;
+
+  top: 50%;
+}
+
+.left-arrow {
+  left: -40px;
+}
+
+.right-arrow {
+  right: -40px;
+}
 
 }
 
@@ -2856,11 +2847,11 @@ body:has(.alien-room) .custom-cursor {
     letter-spacing: 6px;
   }
 
-  .jukebox-screen {
-    width: 92vw;
-    height: 50vh;
-    top: 47%;
-  }
+  #rhythmJukebox {
+  width: 84vw;
+  height: 40vh;
+  top: 47%;
+}
 
   .music-display {
     width: 92%;
@@ -2875,7 +2866,7 @@ body:has(.alien-room) .custom-cursor {
 
   .arcade-info {
     left: 22px;
-    bottom: 95px;
+    bottom: 110px;
     font-size: 0.6rem;
   }
 
@@ -2906,15 +2897,15 @@ body:has(.alien-room) .custom-cursor {
   }
 
   .mix-one {
-    left: 8%;
-    top: 50%;
+    left: 4%;
+    top: 40%;
     width: 22%;
     height: 15%;
   }
 
   .mix-two {
-    right: 8%;
-    top: 50%;
+    right: 4%;
+    top: 40%;
     width: 22%;
     height: 15%;
   }
@@ -2927,26 +2918,26 @@ body:has(.alien-room) .custom-cursor {
   }
 
   .boombox-zone {
-    left: 35%;
-    bottom: 28%;
-    width: 30%;
-    height: 13%;
+    left: 26%;
+    bottom: 29%;
+    width: 36%;
+    height: 12%;
   }
 
   .ps1-hud {
-    left: 18px;
-    bottom: 135px;
+    left: 10px;
+    bottom: 143px;
     font-size: 0.62rem;
   }
 
   .equalizer {
     right: 22px;
-    bottom: 138px;
+    bottom: 93px;
   }
 
   .jungle-dialogue {
-    bottom: 68px;
-    width: 88%;
+    bottom: 12px;
+    width: 93%;
     font-size: 0.8rem;
   }
 
@@ -2965,8 +2956,8 @@ body:has(.alien-room) .custom-cursor {
   }
 
   .depth-messages {
-    left: 28px;
-    bottom: 105px;
+    left: 30px;
+    bottom: 125px;
     font-size: 0.72rem;
   }
 
