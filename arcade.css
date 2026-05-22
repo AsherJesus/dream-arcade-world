@@ -2193,12 +2193,6 @@ no-repeat center center/contain;
    
   }
 
-  #rhythmJukebox {
-    top: 36%;
-    width: 92vw;
-    height: 34vh;
-  }
-
   .arrow {
     width: 58px;
     height: 58px;
@@ -2344,5 +2338,21 @@ no-repeat center center/contain;
     bottom: 82px;
     width: 88%;
     font-size: 0.8rem;
+  }
+}
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-width: 768px) {
+
+    #rhythmJukebox {
+      top: 36%;
+      width: 92vw;
+      height: 34vh;
+    }
+
+    .left-arrow,
+    .right-arrow {
+      top: 50%;
+    }
+
   }
 }
