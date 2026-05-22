@@ -2356,3 +2356,31 @@ no-repeat center center/contain;
 
   }
 }
+
+/* FINAL RHYTHM PHONE FORCE FIX */
+
+@media screen and (max-width: 768px) {
+
+  .rhythm-room #rhythmJukebox,
+  .rhythm-room .jukebox-screen {
+    position: absolute !important;
+    left: 50% !important;
+    top: 43% !important;
+    width: 92vw !important;
+    height: 34vh !important;
+    transform: translate(-50%, -50%) !important;
+    overflow: visible !important;
+  }
+
+  .rhythm-room .arrow {
+    top: 50% !important;
+  }
+
+  .rhythm-room .left-arrow {
+    left: -10px !important;
+  }
+
+  .rhythm-room .right-arrow {
+    right: -10px !important;
+  }
+}
