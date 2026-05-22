@@ -3021,3 +3021,27 @@ no-repeat center center/contain;
     font-size: 0.8rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+
+  #rhythmJukebox {
+    width: 84vw;
+    height: 31vh;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .music-display {
+    width: 86%;
+    height: 82%;
+  }
+
+  .left-arrow {
+    left: -4px;
+  }
+
+  .right-arrow {
+    right: -4px;
+  }
+}
