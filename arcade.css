@@ -2462,3 +2462,44 @@ no-repeat center center/contain;
   }
 
 }
+
+/* TABLET LANDSCAPE RHYTHM FINAL FIX */
+
+@media screen and (min-width: 769px) and (max-width: 1180px) and (orientation: landscape) {
+
+  .rhythm-room #rhythmJukebox,
+  .rhythm-room .jukebox-screen {
+    top: 50% !important;
+    left: 50% !important;
+    width: 78vw !important;
+    height: 72vh !important;
+    transform: translate(-50%, -50%) !important;
+    overflow: visible !important;
+  }
+
+  .rhythm-room .rhythm-title {
+    top: 6% !important;
+    font-size: 2.1rem !important;
+    line-height: 1 !important;
+  }
+
+  .rhythm-room .left-arrow {
+    left: -35px !important;
+  }
+
+  .rhythm-room .right-arrow {
+    right: -35px !important;
+  }
+
+  .rhythm-room .rhythm-dialogue {
+    bottom: 5% !important;
+    width: 70% !important;
+    font-size: 0.75rem !important;
+  }
+
+  .rhythm-room .arcade-info {
+    left: 18px !important;
+    bottom: 10% !important;
+    font-size: 0.55rem !important;
+  }
+}
