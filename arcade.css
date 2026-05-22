@@ -2384,3 +2384,50 @@ no-repeat center center/contain;
     right: -10px !important;
   }
 }
+
+/* =========================
+   TABLET RHYTHM FORCE FIX
+========================= */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+  .rhythm-room #rhythmJukebox,
+  .rhythm-room .jukebox-screen {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 88vw !important;
+    height: 62vh !important;
+    transform: translate(-50%, -50%) !important;
+    overflow: visible !important;
+  }
+
+  .rhythm-room .rhythm-title {
+    top: 8% !important;
+    font-size: 3rem !important;
+  }
+
+  .rhythm-room .arrow {
+    top: 50% !important;
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .rhythm-room .left-arrow {
+    left: -45px !important;
+  }
+
+  .rhythm-room .right-arrow {
+    right: -45px !important;
+  }
+
+  .rhythm-room .arcade-info {
+    left: 24px !important;
+    bottom: 15% !important;
+  }
+
+  .rhythm-room .rhythm-dialogue {
+    bottom: 6% !important;
+    width: 88% !important;
+  }
+}
