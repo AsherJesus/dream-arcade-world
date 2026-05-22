@@ -1880,8 +1880,7 @@ body:has(.alien-room) .custom-cursor {
 }
 
 .screen-pulse {
-  transform: translate(-50%, -50%) scale(1.02) !important;
-  filter: brightness(1.15);
+filter: brightness(1.15);
 }
 
 @keyframes softJukeboxGlow {
