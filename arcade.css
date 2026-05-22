@@ -2344,7 +2344,7 @@ no-repeat center center/contain;
   @media screen and (max-width: 768px) {
 
     #rhythmJukebox {
-      top: 36%;
+      top: 28%;
       width: 92vw;
       height: 34vh;
     }
