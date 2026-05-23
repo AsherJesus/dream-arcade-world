@@ -1517,4 +1517,128 @@ body:has(.depth-room) .custom-cursor {
   color: #8fd3ff;
 }
 
+.depth-floating span {
+  pointer-events: auto;
+  touch-action: none;
+  user-select: none;
+}
 
+/* =========================
+   ROOM LOADER COLORS
+========================= */
+
+.jungle-loader {
+  background:
+    radial-gradient(circle, #0d1b0d, #020402);
+
+  color: #9dff7a;
+}
+
+.rhythm-loader {
+  background:
+    radial-gradient(circle, #241204, #050200);
+
+  color: #ffcf7a;
+}
+
+.alien-loader {
+  background:
+    radial-gradient(circle, #061b14, #010504);
+
+  color: #7dffb7;
+}
+
+.depth-loader {
+  background:
+    radial-gradient(circle, #07121f, #010204);
+
+  color: #8fd3ff;
+}
+
+.room-loader-content {
+  text-shadow:
+    0 0 12px currentColor,
+    0 0 22px currentColor;
+}
+/* =========================
+   BACK BUTTON BASE
+========================= */
+
+.back-button {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-family: "Courier New", monospace;
+
+  letter-spacing: 2px;
+
+  z-index: 200;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.05);
+}
+
+/* JUNGLE */
+
+.jungle-room .back-button {
+  background: rgba(20,40,20,0.7);
+
+  border: 2px solid #9dff7a;
+
+  color: #b8ff7a;
+
+  box-shadow:
+    0 0 12px rgba(157,255,122,0.5);
+}
+
+/* RHYTHM */
+
+.rhythm-room .back-button {
+  background: rgba(40,20,0,0.7);
+
+  border: 2px solid #ffcf7a;
+
+  color: #ffe2a8;
+
+  box-shadow:
+    0 0 12px rgba(255,207,122,0.5);
+}
+
+/* ALIEN */
+
+.alien-room .back-button {
+  background: rgba(0,30,20,0.7);
+
+  border: 2px solid #7dffb7;
+
+  color: #aaffdd;
+
+  box-shadow:
+    0 0 12px rgba(125,255,183,0.5);
+}
+
+/* DEPTH */
+
+.depth-room .back-button {
+  background: rgba(10,20,40,0.7);
+
+  border: 2px solid #8fd3ff;
+
+  color: #c7ecff;
+
+  box-shadow:
+    0 0 12px rgba(143,211,255,0.5);
+}
