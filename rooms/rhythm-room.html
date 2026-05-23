@@ -11,15 +11,13 @@
 
 <body>
 
-  <div class="room-loader rhythm-loader">
-
   <div id="roomLoader" class="room-loader rhythm-loader">
-  <div class="room-loader-content">
-    <p>INSERTING RHYTHM DISC...</p>
-    <p>SYNCING BEACH FREQUENCY...</p>
-    <p>WELCOME TO RHYTHM SELECT</p>
+    <div class="room-loader-content">
+      <p>INSERTING RHYTHM DISC...</p>
+      <p>SYNCING BEACH FREQUENCY...</p>
+      <p>WELCOME TO RHYTHM SELECT</p>
+    </div>
   </div>
-</div>
 
   <div class="custom-cursor"></div>
 
@@ -44,9 +42,7 @@
       ← BACK TO ARCADE
     </a>
 
-    <h1 class="rhythm-title">
-      RHYTHM SELECT
-    </h1>
+    <h1 class="rhythm-title">RHYTHM SELECT</h1>
 
     <div id="rhythmJukebox" class="jukebox-screen">
 
@@ -59,9 +55,7 @@
           alt="Rhythm Mix"
         />
 
-        <h2 id="rhythmTrack">
-          BEACH LOVE
-        </h2>
+        <h2 id="rhythmTrack">BEACH LOVE</h2>
       </div>
 
       <button class="arrow right-arrow">▶</button>
@@ -72,9 +66,7 @@
       Warm beach sunset rhythm loaded.
     </div>
 
-    <div class="free-play">
-      FREE PLAY
-    </div>
+    <div class="free-play">FREE PLAY</div>
 
     <div class="arcade-info">
       <span>STAGE 01</span>
@@ -82,26 +74,14 @@
       <span>PLAYER 1 READY</span>
     </div>
 
-    <audio id="rhythmAudio"></audio>
+    <audio id="rhythmAudio" loop></audio>
 
     <audio
       id="menuClick"
-      src="./assets/audio/sfx/menu-click.mp3"
+      src="./asset audio/menu-click.mp3"
     ></audio>
 
   </main>
-
-  <audio id="beachLove" src="./assets/audio/korean-beachlove.mp3"></audio>
-
-<audio id="paradiseStep" src="./assets/audio/korean-paradisestep.mp3"></audio>
-
-<audio id="skylineRhythm" src="./assets/audio/korean-skyline.mp3"></audio>
-
-<audio id="sunsetSignal" src="./assets/audio/korean-sunset.mp3"></audio>
-
-<audio id="tropicalBreak" src="./assets/audio/korean-tropicalbreak.mp3"></audio>
-
-<audio id="menuClick" src="./assets/audio/jungle-click.mp3"></audio>
 
   <script src="../script.js"></script>
 
