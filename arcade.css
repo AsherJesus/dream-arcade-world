@@ -404,7 +404,7 @@ body:has(.depth-room) .custom-cursor {
   color: #b8ff7a;
   background:
     linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
-    url("./rooms/img/customjungle.png") no-repeat center center;
+    url("./img/customjungle.png") no-repeat center center;
   background-size: contain;
 }
 
@@ -596,7 +596,7 @@ body:has(.depth-room) .custom-cursor {
   height: 13%;
   background:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("./rooms/img/cherry-blossom-mix.png");
+    url("./img/cherry-blossom-mix.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -715,7 +715,7 @@ body:has(.depth-room) .custom-cursor {
   font-family: "Courier New", monospace;
   background:
     linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.32)),
-    url("./rooms/img/beachlove.png") center center / cover no-repeat;
+    url("./img/beachlove.png") center center / cover no-repeat;
   color: #fff2c4;
 }
 
@@ -937,7 +937,7 @@ body:has(.depth-room) .custom-cursor {
 .depth-background {
   position: absolute;
   inset: 0;
-  background: url("./rooms/img/depth-bg.png") no-repeat center center/cover;
+  background: url("./img/depth-bg.png") no-repeat center center/cover;
   opacity: 0.55;
   transform: scale(1.08);
   transition: transform 0.2s ease;
@@ -1062,7 +1062,7 @@ body:has(.depth-room) .custom-cursor {
   font-family: "Courier New", monospace;
   background:
     linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.45)),
-    url("./rooms/img/alien-bg.png") no-repeat center center/contain;
+    url("./img/alien-bg.png") no-repeat center center/contain;
   color: #b8ff7a;
 }
 
