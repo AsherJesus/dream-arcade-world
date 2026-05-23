@@ -218,11 +218,27 @@ function updateRhythmSong() {
     menuClick.play().catch(() => {});
   }
 
-  if (rhythmAudio) {
-    rhythmAudio.src = song.audio;
-    rhythmAudio.volume = 0.35;
-    rhythmAudio.play().catch(() => {});
-  }
+ if (rhythmAudio) {
+
+  rhythmAudio.pause();
+  rhythmAudio.currentTime = 0;
+
+  rhythmAudio.src = song.audio;
+
+  rhythmAudio.volume = 0.35;
+  rhythmAudio.loop = true;
+
+  rhythmAudio.play().then(() => {
+
+    console.log("Rhythm audio playing");
+
+  }).catch((err) => {
+
+    console.log("Audio failed:", err);
+
+  });
+
+}
 }
 
 if (leftArrow) {
@@ -441,3 +457,20 @@ depthIcons.forEach((icon) => {
     icon.style.cursor = "grab";
   });
 });
+
+/* =========================
+   AUDIO UNLOCK / START
+========================= */
+
+function startRoomAudio() {
+  const audios = document.querySelectorAll("audio");
+
+  audios.forEach((audio) => {
+    audio.volume = audio.volume || 0.35;
+
+    audio.play().catch(() => {});
+  });
+}
+
+document.addEventListener("click", startRoomAudio, { once: true });
+document.addEventListener("touchstart", startRoomAudio, { once: true });
