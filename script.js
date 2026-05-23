@@ -348,36 +348,7 @@ if (alienAmbient) {
   alienAmbient.play().catch(() => {});
   }
 
-  const jungleMusic = document.getElementById("jungleMusic");
-const jungleAmbient = document.getElementById("jungleAmbient");
-
-if (jungleMusic) {
-
-  jungleMusic.volume = 0.45;
-
-  jungleMusic.play().catch(() => {
-
-    document.body.addEventListener("click", () => {
-      jungleMusic.play();
-    }, { once: true });
-
-  });
-
-}
-
-if (jungleAmbient) {
-
-  jungleAmbient.volume = 0.20;
-
-  jungleAmbient.play().catch(() => {
-
-    document.body.addEventListener("click", () => {
-      jungleAmbient.play();
-    }, { once: true });
-
-  });
-
-}
+ 
 
 /* =========================
    CUSTOM CURSOR
@@ -397,6 +368,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const jungleClick = document.getElementById("jungleClick");
+
+if (jungleClick) {
+  jungleClick.volume = 0.12;
+
+  jungleClick.play().catch(() => {
+
+    document.body.addEventListener("click", () => {
+      jungleClick.play();
+    }, { once: true });
+
+  });
+}
 
 const roomLoader = document.getElementById("roomLoader");
 
@@ -422,19 +407,22 @@ depthIcons.forEach((icon) => {
   let offsetY = 0;
 
   icon.style.pointerEvents = "auto";
+  icon.style.touchAction = "none";
   icon.style.cursor = "grab";
 
-  icon.addEventListener("mousedown", (e) => {
+  icon.addEventListener("pointerdown", (e) => {
     isDragging = true;
 
-    offsetX = e.clientX - icon.offsetLeft;
-    offsetY = e.clientY - icon.offsetTop;
+    const rect = icon.getBoundingClientRect();
+
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
 
     icon.style.cursor = "grabbing";
-    
+    icon.setPointerCapture(e.pointerId);
   });
 
-  window.addEventListener("mousemove", (e) => {
+  icon.addEventListener("pointermove", (e) => {
     if (!isDragging) return;
 
     icon.style.left = `${e.clientX - offsetX}px`;
@@ -443,7 +431,12 @@ depthIcons.forEach((icon) => {
     icon.style.bottom = "auto";
   });
 
-  window.addEventListener("mouseup", () => {
+  icon.addEventListener("pointerup", () => {
+    isDragging = false;
+    icon.style.cursor = "grab";
+  });
+
+  icon.addEventListener("pointercancel", () => {
     isDragging = false;
     icon.style.cursor = "grab";
   });
