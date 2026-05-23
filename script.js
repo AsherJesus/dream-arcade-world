@@ -36,17 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================
-   CUSTOM CURSOR
-========================= */
-
-if (customCursor) {
-  document.addEventListener("mousemove", (e) => {
-    customCursor.style.transform =
-      `translate(${e.clientX}px, ${e.clientY}px)`;
-  });
-}
-
-/* =========================
    MAIN ARCADE CLICKS
 ========================= */
 
@@ -137,45 +126,43 @@ imageButtons.forEach((button) => {
 /* =========================
    RHYTHM ROOM
 ========================= */
-
 const songs = [
   {
     title: "BEACH LOVE",
     image: "./img/ddr beach-love.png",
-    audio: "../assets/audio/rhythm/beach-love.mp3",
+    audio: "./asset audio/korean-beachlove.mp3",
     message: "Warm beach sunset rhythm loaded.",
     bpm: "118 BPM"
   },
   {
     title: "SUNSET SIGNAL",
     image: "./img/remaster sunset.png",
-    audio: "../assets/audio/rhythm/sunset-signal.mp3",
+    audio: "./asset audio/korean-sunset.mp3",
     message: "Boardwalk lights glow in the distance.",
     bpm: "124 BPM"
   },
   {
     title: "PARADISE STEP",
     image: "./img/ddr paradisestep.png",
-    audio: "../assets/audio/rhythm/paradise-step.mp3",
+    audio: "./asset audio/korean-paradisestep.mp3",
     message: "Neon dance floor activated.",
     bpm: "132 BPM"
   },
   {
     title: "SKYLINE RHYTHM",
     image: "./img/ddr skyline.png",
-    audio: "../assets/audio/rhythm/skyline-rhythm.mp3",
+    audio: "./asset audio/korean-skyline.mp3",
     message: "City lights pulse with the beat.",
     bpm: "140 BPM"
   },
   {
     title: "TROPICAL BREAKS",
     image: "./img/ddr tropical.png",
-    audio: "../assets/audio/rhythm/tropical-breaks.mp3",
+    audio: "./asset audio/korean-tropicalbreak.mp3",
     message: "Jungle rave signal detected.",
     bpm: "165 BPM"
   }
 ];
-
 let currentSong = 0;
 
 const rhythmImage = document.getElementById("rhythmImage");
@@ -359,4 +346,105 @@ const alienAmbient = document.getElementById("alienAmbient");
 if (alienAmbient) {
   alienAmbient.volume = 0.22;
   alienAmbient.play().catch(() => {});
+  }
+
+  const jungleMusic = document.getElementById("jungleMusic");
+const jungleAmbient = document.getElementById("jungleAmbient");
+
+if (jungleMusic) {
+
+  jungleMusic.volume = 0.45;
+
+  jungleMusic.play().catch(() => {
+
+    document.body.addEventListener("click", () => {
+      jungleMusic.play();
+    }, { once: true });
+
+  });
+
 }
+
+if (jungleAmbient) {
+
+  jungleAmbient.volume = 0.20;
+
+  jungleAmbient.play().catch(() => {
+
+    document.body.addEventListener("click", () => {
+      jungleAmbient.play();
+    }, { once: true });
+
+  });
+
+}
+
+/* =========================
+   CUSTOM CURSOR
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const customCursor = document.querySelector(".custom-cursor");
+
+  if (!customCursor) return;
+
+  window.addEventListener("mousemove", (e) => {
+
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+
+  });
+
+});
+
+const roomLoader = document.getElementById("roomLoader");
+
+if (roomLoader) {
+  setTimeout(() => {
+    roomLoader.style.opacity = "0";
+
+    setTimeout(() => {
+      roomLoader.style.display = "none";
+    }, 1000);
+  }, 1800);
+}
+
+/* =========================
+   DEPTH DRAGGABLE ICONS
+========================= */
+
+const depthIcons = document.querySelectorAll(".depth-floating span");
+
+depthIcons.forEach((icon) => {
+  let isDragging = false;
+  let offsetX = 0;
+  let offsetY = 0;
+
+  icon.style.pointerEvents = "auto";
+  icon.style.cursor = "grab";
+
+  icon.addEventListener("mousedown", (e) => {
+    isDragging = true;
+
+    offsetX = e.clientX - icon.offsetLeft;
+    offsetY = e.clientY - icon.offsetTop;
+
+    icon.style.cursor = "grabbing";
+    
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+
+    icon.style.left = `${e.clientX - offsetX}px`;
+    icon.style.top = `${e.clientY - offsetY}px`;
+    icon.style.right = "auto";
+    icon.style.bottom = "auto";
+  });
+
+  window.addEventListener("mouseup", () => {
+    isDragging = false;
+    icon.style.cursor = "grab";
+  });
+});
