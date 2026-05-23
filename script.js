@@ -53,7 +53,7 @@ hotspots.forEach((item) => {
    JUNGLE ROOM
 ========================= */
 
-let selectedTrack = "../assets/audio/mix-01.mp3";
+let selectedTrack = "./asset/audio/mix-01.mp3";
 
 if (bgMusic) {
   bgMusic.volume = 0.25;
@@ -130,35 +130,35 @@ const songs = [
   {
     title: "BEACH LOVE",
     image: "./img/ddr beach-love.png",
-    audio: "../asset/audio/korean-beachlove.mp3",
+    audio: "./asset audio/korean-beachlove.mp3",
     message: "Warm beach sunset rhythm loaded.",
     bpm: "118 BPM"
   },
   {
     title: "SUNSET SIGNAL",
     image: "./img/remaster sunset.png",
-    audio: "../asset/audio/korean-sunset.mp3",
+    audio: "./asset audio/korean-sunset.mp3",
     message: "Boardwalk lights glow in the distance.",
     bpm: "124 BPM"
   },
   {
     title: "PARADISE STEP",
     image: "./img/ddr paradisestep.png",
-    audio: "../asset/audio/korean-paradisestep.mp3",
+    audio: "./asset audio/korean-paradisestep.mp3",
     message: "Neon dance floor activated.",
     bpm: "132 BPM"
   },
   {
     title: "SKYLINE RHYTHM",
     image: "./img/ddr skyline.png",
-    audio: "../asset/audio/korean-skyline.mp3",
+    audio: "./asset audio/korean-skyline.mp3",
     message: "City lights pulse with the beat.",
     bpm: "140 BPM"
   },
   {
     title: "TROPICAL BREAKS",
     image: "./img/ddr tropical.png",
-    audio: "../asset/audio/korean-tropicalbreak.mp3",
+    audio: "./asset audio/korean-tropicalbreak.mp3",
     message: "Jungle rave signal detected.",
     bpm: "165 BPM"
   }
