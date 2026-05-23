@@ -11,6 +11,14 @@
 
 <body>
 
+  <div id="roomLoader" class="room-loader rhythm-loader">
+  <div class="room-loader-content">
+    <p>INSERTING RHYTHM DISC...</p>
+    <p>SYNCING BEACH FREQUENCY...</p>
+    <p>WELCOME TO RHYTHM SELECT</p>
+  </div>
+</div>
+
   <div class="custom-cursor"></div>
 
   <main class="rhythm-room">
@@ -38,7 +46,7 @@
       RHYTHM SELECT
     </h1>
 
-    <div class="jukebox-screen">
+    <div id="rhythmJukebox" class="jukebox-screen">
 
       <button class="arrow left-arrow">◀</button>
 
@@ -80,6 +88,18 @@
     ></audio>
 
   </main>
+
+  <audio id="beachLove" src="./asset audio/korean-beachlove.mp3"></audio>
+
+<audio id="paradiseStep" src="./asset audio/korean-paradisestep.mp3"></audio>
+
+<audio id="skylineRhythm" src="./asset audio/korean-skyline.mp3"></audio>
+
+<audio id="sunsetSignal" src="./asset audio/korean-sunset.mp3"></audio>
+
+<audio id="tropicalBreak" src="./asset audio/korean-tropicalbreak.mp3"></audio>
+
+<audio id="menuClick" src="./asset audio/jungle-click.mp3"></audio>
 
   <script src="../script.js"></script>
 
